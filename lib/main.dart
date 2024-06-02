@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:manga_list/routes/app_page.dart';
+import 'exports.dart';
 
-import './pages/home.dart';
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var dbRes = await MangaDatabase().database;
+  print('${dbRes}');
   runApp(MyApp());
 }
 
@@ -13,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: HomePage(),
-      getPages: AppPages.pages,
+      getPages: AppRoutes.pages,
+      initialBinding: HomeBinding(),
     );
   }
 }

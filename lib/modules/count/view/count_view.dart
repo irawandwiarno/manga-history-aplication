@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controllers/countC.dart';
+import '../controler/count_controler.dart';
 
 class CountPage extends StatelessWidget {
   final countC = Get.find<CountC>();
